@@ -121,12 +121,12 @@ a{
   box-shadow: none;
 }
 
-.loop-wrap{
+/* .loop-wrap{
   margin-top: 80px;
   margin-bottom: 80px;
   display: flex;
   width: 100vw;
-  height: auto;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -159,7 +159,75 @@ a{
 
 .loop-wrap img:last-child {
   animation: loop2 100s linear infinite;
+} */
+.loop-wrap{
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 200px;
+  overflow: hidden;
 }
+
+.loop-wrap img {
+  width: auto;
+  height:100%;
+}
+
+@-webkit-keyframes loop {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes loop {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes loop2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+  }
+}
+
+.loop-wrap img:first-child {
+  -webkit-animation: loop 100s -50s linear infinite;
+          animation: loop 100s -50s linear infinite;
+}
+
+.loop-wrap img:last-child {
+  -webkit-animation: loop2 100s linear infinite;
+          animation: loop2 100s linear infinite;
 
 .img-title img{
   width: 100vw;
@@ -676,9 +744,7 @@ table td{
     display: inline-block;
   }
 
-  .loop-wrap{
-    height: 100px;
-  }
+
   /******************* ヘッダー********************/
   #header nav{
     display: none;
